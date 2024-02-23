@@ -1,2 +1,4 @@
 # Virtualized Vehicle HAL (Client)
 /(vendor|system/vendor)/bin/hw/android\.hardware\.automotive\.vehicle@2\.0-virtualization-service-extended  u:object_r:hal_vehicle_default_exec:s0
+# OEM Lock HAL
+/vendor/bin/hw/android\.hardware\.oemlock-service.example u:object_r:hal_oemlock_default_exec:s0
