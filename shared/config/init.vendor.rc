@@ -3,17 +3,19 @@ on early-init
 
     mount securityfs securityfs /sys/kernel/security
 
-    setprop ro.sf.lcd_density ${ro.boot.lcd_density}
-    setprop ro.hardware.egl ${ro.boot.hardware.egl}
-    setprop debug.sf.vsync_reactor_ignore_present_fences true
-    setprop ro.hardware.gralloc ${ro.boot.hardware.gralloc}
-    setprop ro.hardware.hwcomposer ${ro.boot.hardware.hwcomposer}
-    setprop ro.hardware.vulkan ${ro.boot.hardware.vulkan}
-    setprop ro.cpuvulkan.version ${ro.boot.cpuvulkan.version}
-    setprop ro.hw_timeout_multiplier ${ro.boot.hw_timeout_multiplier}
+#    setprop ro.sf.lcd_density ${ro.boot.lcd_density}
+#    setprop ro.hardware.egl ${ro.boot.hardware.egl}
+#    setprop debug.sf.vsync_reactor_ignore_present_fences true
+#    setprop ro.hardware.gralloc ${ro.boot.hardware.gralloc}
+#    setprop ro.hardware.hwcomposer ${ro.boot.hardware.hwcomposer}
+#    setprop ro.hardware.vulkan ${ro.boot.hardware.vulkan}
+#    setprop ro.cpuvulkan.version ${ro.boot.cpuvulkan.version}
+#    setprop ro.hw_timeout_multiplier ${ro.boot.hw_timeout_multiplier}
 
     # start module load in the background
-    start vendor.insmod_sh
+    start vendor.dlkm_loader
+    # specially load zram as it is a "leaf" GKI module
+    exec u:r:modprobe:s0 -- /system/bin/modprobe -a -d /system/lib/modules zram.ko
 
 on init
     # ZRAM setup
@@ -48,10 +50,7 @@ on fs
     restorecon_recursive /vendor
 
     start setup_wifi
-    # works around framework netiface enumeration issue
-    # start rename_eth0
     
-
     # So GceBootReporter can print to kmsg
     chmod 622 /dev/kmsg
 
