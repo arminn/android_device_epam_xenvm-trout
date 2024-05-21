@@ -1,0 +1,3 @@
+#============= vold ==============
+allow vold dumpstate:fd use;
+

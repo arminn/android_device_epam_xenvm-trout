@@ -1,0 +1,6 @@
+#============= ephemeral_app ==============
+allow ephemeral_app graphics_device:chr_file getattr;
+allow ephemeral_app sysfs_gpu_trout:dir search;
+allow ephemeral_app toolbox_exec:file { getattr execute execute_no_trans map open read };
+allow ephemeral_app trust_service:service_manager find;
+allow ephemeral_app virtual_device_service:service_manager find;

@@ -1,0 +1,2 @@
+#============= vendor_init ==============
+allow vendor_init vendor_ser_prop:property_service set;

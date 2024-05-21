@@ -1,0 +1,34 @@
+#============= untrusted_app ==============
+allow untrusted_app block_device:dir search;
+allow untrusted_app user_profile_data_file:dir getattr;
+allow untrusted_app apex_info_file:file getattr;
+allow untrusted_app metadata_file:dir getattr;
+allow untrusted_app linkerconfig_file:dir getattr;
+allow untrusted_app overlayfs_file:dir getattr;
+allow untrusted_app sysfs_gpu_trout:dir search;
+
+#============= untrusted_app_25 ==============
+allow untrusted_app_25 sysfs_gpu_trout:dir search;
+allow untrusted_app_25 apex_info_file:file getattr;
+allow untrusted_app_25 metadata_file:dir getattr;
+allow untrusted_app_25 overlayfs_file:dir getattr;
+
+#============= untrusted_app_27 ==============
+allow untrusted_app_27 apex_info_file:file getattr;
+allow untrusted_app_27 metadata_file:dir getattr;
+allow untrusted_app_27 overlayfs_file:dir getattr;
+allow untrusted_app_27 sysfs_gpu_trout:dir search;
+
+
+#============= untrusted_app_29 ==============
+allow untrusted_app_29 sysfs_gpu_trout:dir search;
+
+#============= untrusted_app_30 ==============
+allow untrusted_app_30 sysfs_gpu_trout:dir search;
+
+#============= untrusted_app_32 ==============
+allow untrusted_app_32 sysfs_gpu_trout:dir search;
+
+#============= untrusted_app_all ==============
+allow untrusted_app_all sysfs_gpu_trout:dir search;
+

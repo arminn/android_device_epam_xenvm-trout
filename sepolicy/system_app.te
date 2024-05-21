@@ -1,0 +1,4 @@
+#============= system_app ==============
+allow system_app graphics_device:chr_file getattr;
+allow system_app proc_pagetypeinfo:file { getattr open read };
+allow system_app sysfs_gpu_trout:dir search;

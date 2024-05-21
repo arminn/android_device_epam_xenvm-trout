@@ -1,0 +1,10 @@
+#============= sdk_sandbox_34 ==============
+gpu_access(sdk_sandbox_all)
+allow sdk_sandbox_all graphics_device:chr_file getattr;
+allow sdk_sandbox_all sysfs_type:dir search;
+allow sdk_sandbox_all gpu_device:dir search;
+allow sdk_sandbox_all system_file:file lock;
+allow sdk_sandbox_all virtual_device_service:service_manager find;
+allow sdk_sandbox_34 build_attestation_prop:file read;
+
+

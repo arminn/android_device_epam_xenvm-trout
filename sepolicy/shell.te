@@ -1,0 +1,6 @@
+#============= shell ==============
+allow shell build_attestation_prop:file { open read getattr };
+allow shell aac_drc_prop:file { getattr open };
+allow shell ab_update_gki_prop:file { getattr open };
+allow shell build_attestation_prop:file { getattr map };
+

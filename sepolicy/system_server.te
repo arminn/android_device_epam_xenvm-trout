@@ -1,0 +1,11 @@
+#============= system_server ==============
+allow system_server evsmanagerd:process signal;
+allow system_server hal_evs_default:process signal;
+allow system_server sysfs_gpu_trout:file { open read getattr };
+allow system_server vendor_file:dir read;
+allow system_server hal_audiocontrol_impl:process signal;
+allow system_server hal_can_socketcan:process signal;
+allow system_server hal_ivn_default:process signal;
+allow system_server hal_occupant_awareness_default:process signal;
+allow system_server hal_remoteaccess_default:process signal;
+allow system_server hal_vehicle_default:process signal;

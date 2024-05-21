@@ -1,0 +1,2 @@
+#============= system_suspend ==============
+#allow system_suspend sysfs_rtc:dir read;
