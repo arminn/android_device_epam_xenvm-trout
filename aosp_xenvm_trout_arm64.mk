@@ -9,17 +9,6 @@ ifneq ($(TARGET_PREBUILT_KERNEL),)
    TARGET_KERNEL_USE := 6.1
 endif
 
-# TARGET_PREBUILT_MODULES_DIR - environment variable which could contain path to the prebuilt kernel modules.
-ifneq ($(TARGET_PREBUILT_MODULES_DIR),)
-   # Set KERNEL_MODULES_PATH to the directory with modules
-   KERNEL_MODULES_PATH := $(TARGET_PREBUILT_MODULES_DIR)
-   # Set BOARD_VENDOR_RAMDISK_KERNEL_MODULES and variable which defines which kernel modules will be used in trout device.
-   BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(filter-out $(TARGET_PREBUILT_MODULES_DIR),$(shell find $(TARGET_PREBUILT_MODULES_DIR) -type f -name *.ko))
-
-   # Flag to disable stripping kernel modules during AOSP build.
-   BOARD_DO_NOT_STRIP_VENDOR_RAMDISK_MODULES := true
-endif
-
 # BOARD_KERNEL_CMDLINE += \
 #    androidboot.qemu=1 \
 #    androidboot.selinux=permissive \
