@@ -41,8 +41,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 $(call inherit-product, device/google/cuttlefish/shared/virgl/device_vendor.mk)
 $(call inherit-product, device/google/trout/aosp_trout_arm64.mk)
-
-include device/epam/aosp-xenvm-trout/aosp_xenvm_trout_common.mk
+$(call inherit-product, device/epam/aosp-xenvm-trout/aosp_xenvm_trout_common.mk)
 
 LOCAL_BT_PROPERTIES = \
  vendor.ser.bt-uart=/dev/hvc5 \
