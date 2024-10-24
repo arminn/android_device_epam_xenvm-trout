@@ -50,6 +50,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.carwatchdog.client_healthcheck.interval=20 \
     ro.carwatchdog.vhal_healthcheck.interval=10 \
 
+$(call inherit-product, device/google/cuttlefish/shared/virgl/device_vendor.mk)
 $(call inherit-product, device/google/trout/aosp_trout_arm64.mk)
 
 include device/epam/aosp-xenvm-trout/aosp_xenvm_trout_common.mk
