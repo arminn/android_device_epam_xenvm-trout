@@ -42,6 +42,13 @@ PRODUCT_VENDOR_PROPERTIES += \
 ENABLE_EVS_SERVICE := false
 ENABLE_EVS_SAMPLE := false
 
+# Enable Thread Network HAL with simulation RCP
+PRODUCT_PACKAGES += \
+    com.android.hardware.threadnetwork-simulation-rcp
+
+PRODUCT_VENDOR_PROPERTIES += \
+	persist.vendor.otsim.local_interface=eth0
+
 $(call inherit-product, device/google/cuttlefish/shared/virgl/device_vendor.mk)
 $(call inherit-product, device/google/trout/aosp_trout_arm64.mk)
 $(call inherit-product, device/epam/aosp-xenvm-trout/aosp_xenvm_trout_common.mk)
