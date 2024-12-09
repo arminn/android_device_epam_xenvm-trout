@@ -9,24 +9,6 @@ ifneq ($(TARGET_PREBUILT_KERNEL),)
    TARGET_KERNEL_USE := 6.1
 endif
 
-# BOARD_KERNEL_CMDLINE += \
-#    androidboot.qemu=1 \
-#    androidboot.selinux=permissive \
-#    androidboot.fstab_suffix=trout \
-#    androidboot.hardware=cutf_cvm \
-#    androidboot.slot_suffix=_a \
-#    androidboot.hardware.gralloc=minigbm \
-#    androidboot.hardware.hwcomposer=drm_minigbm \
-#    androidboot.hardware.egl=mesa \
-#    androidboot.logcat=*:V \
-#    androidboot.vendor.vehiclehal.server.cid=2 \
-#    androidboot.vendor.vehiclehal.server.port=9300 \
-#    androidboot.vendor.vehiclehal.server.psf=/data/data/power.file \
-#    androidboot.vendor.vehiclehal.server.pss=/data/data/power.socket \
-#    androidboot.boot_devices=4010000000.pcie \
-#    loglevel=7 \
-#    console=ttyAMA0
-
 LOCAL_OEMLOCK_PRODUCT_PACKAGE := android.hardware.oemlock-service.example
 
 # To override VHAL, declare LOCAL_VHAL_PRODUCT_PACKAGE
