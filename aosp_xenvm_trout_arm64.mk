@@ -3,9 +3,6 @@ ifneq ($(TARGET_PREBUILT_KERNEL),)
    # Set TARGET_KERNEL_PATH variable which defines which kernel will be used in trout device.
    TARGET_KERNEL_PATH := $(TARGET_PREBUILT_KERNEL)
 
-   # Flag to supress errors in case of usage of the new kernel
-   # which is not mentioned in original configs and compatibility matrices.
-   PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
    TARGET_KERNEL_USE := 6.1
 endif
 
