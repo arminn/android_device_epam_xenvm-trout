@@ -1,6 +1,8 @@
 
 TARGET_USERDATAIMAGE_PARTITION_SIZE := 7516192768 # 7 GB
 
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
 ifneq ($(TARGET_PREBUILT_MODULES_DIR),)
     SYSTEM_DLKM_SRC := $(TARGET_PREBUILT_MODULES_DIR)
 endif
@@ -37,12 +39,11 @@ BOARD_BOOTCONFIG += androidboot.lcd_density=160
 BOARD_BOOTCONFIG += androidboot.hardware.hwcomposer=ranchu
 BOARD_BOOTCONFIG += androidboot.hardware.hwcomposer.mode=client
 BOARD_BOOTCONFIG += androidboot.hardware.hwcomposer.display_finder_mode=drm
-BOARD_BOOTCONFIG += androidboot.hardware.gralloc=minigbm
-BOARD_BOOTCONFIG += androidboot.hardware.egl=mesa androidboot.boot_devices=33000000.pcie
+BOARD_BOOTCONFIG += androidboot.boot_devices=33000000.pcie
 BOARD_BOOTCONFIG += androidboot.openthread_node_id=1
 
 # Reuse trout androidboot properties
-BOARD_BOOTCONFIG += androidboot.hardware=cutf_cvm
+BOARD_BOOTCONFIG += androidboot.hardware=xenvm_trout_arm64
 BOARD_BOOTCONFIG += androidboot.serialno=CUTTLEFISHCVD01
 BOARD_BOOTCONFIG += androidboot.cf_devcfg=1
 
@@ -61,6 +62,4 @@ BOARD_KERNEL_CMDLINE += 8250.nr_uarts=1
 
 BOARD_VENDOR_SEPOLICY_DIRS += device/google/cuttlefish/shared/virgl/sepolicy
 
-# Use virgl and mesa3d upstream
-BOARD_MESA3D_USES_MESON_BUILD := true
-BOARD_MESA3D_GALLIUM_DRIVERS := virgl
+override TARGET_BOARD_PLATFORM := x5h
