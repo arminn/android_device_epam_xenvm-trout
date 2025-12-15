@@ -139,6 +139,45 @@ PRODUCT_PACKAGES += \
     libgralloctypes.vendor
 
 
+PRODUCT_PACKAGES += \
+    img_vintf_android.hardware.graphics.allocator.aidl-service.img-v2.xml \
+    img_vintf_android.hardware.memtrack.aidl.img.xml \
+    img_vintf_mapper.powervr.xml \
+    img_vintf_android.hardware.dumpstate@1.1-service.img.xml \
+    android.hardware.dumpstate@1.1-service.img.rc \
+    android.hardware.graphics.allocator.aidl-service.img.rc \
+    android.hardware.memtrack.aidl.img.rc \
+    hwperfbin2jsont \
+    pvrdebug \
+    pvrhtb2txt \
+    pvrhtbd \
+    pvrhwperf \
+    pvrhwperfd \
+    pvrlogdump \
+    pvrlogsplit \
+    pvrsrvctl \
+    pvrtld \
+    android.hardware.dumpstate@1.1-service.img \
+    android.hardware.graphics.allocator-service \
+    android.hardware.memtrack-service.img \
+    rgx.fw.35.2.1632.35 \
+    rgx.sh.35.2.1632.35 \
+    libgpudataproducer \
+    libIMGegl \
+    libpvrANDROID_WSEGL \
+    libPVROCL \
+    libPVRScopeServices \
+    libsrv_um \
+    libufwriter \
+    libusc \
+    libEGL_powervr \
+    libGLESv1_CM_powervr \
+    libGLESv2_powervr \
+    gralloc.xenvm_trout_arm64 \
+    mapper.powervr \
+    vulkan.powervr
+
+
 # Graphics composer HIDL HAL (service added below)
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1.vendor \
@@ -149,7 +188,9 @@ PRODUCT_PACKAGES += \
     android.hardware.dumpstate@1.1 \
     android.hardware.dumpstate@1.1.vendor
 
-$(call inherit-product, vendor/imagination/rogue_um/x5h/prebuilds.mk)
+LOCAL_DEVICE_FCM_MANIFEST_FILE = device/epam/aosp-xenvm-trout/manifest.xml
+
+#$(call inherit-product, vendor/imagination/rogue_um/x5h/prebuilds.mk)
 $(call inherit-product, device/epam/aosp-xenvm-trout/build/graphics.mk)
 $(call inherit-product, device/google/cuttlefish/shared/virgl/device_vendor.mk)
 $(call inherit-product, device/google/trout/aosp_trout_arm64.mk)
