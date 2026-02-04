@@ -30,7 +30,7 @@ PRODUCT_VENDOR_PROPERTIES += ro.hardware.vulkan=powervr
 
 # To override VHAL, declare LOCAL_VHAL_PRODUCT_PACKAGE
 # prior to device/google/trout/aosp_trout_arm64.mk include
-LOCAL_VHAL_PRODUCT_PACKAGE = android.hardware.automotive.vehicle@2.0-virtualization-service
+LOCAL_VHAL_PRODUCT_PACKAGE = android.hardware.automotive.vehicle@2.0-default-service
 
 DEVICE_VIRTWIFI_PORT := eth0
 
