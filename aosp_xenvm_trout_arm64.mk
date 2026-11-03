@@ -159,6 +159,8 @@ else
 $(error Unsupported CAMERA_HAL_TYPE '$(CAMERA_HAL_TYPE)', expected 'c2' or 'evs')
 endif
 
+PRODUCT_VENDOR_PROPERTIES += ro.com.android.mobiledata=false
+
 $(call inherit-product, device/epam/aosp-xenvm-trout/build/graphics.mk)
 $(call inherit-product, device/google/trout/aosp_trout_arm64.mk)
 $(call inherit-product, device/epam/aosp-xenvm-trout/aosp_xenvm_trout_common.mk)
